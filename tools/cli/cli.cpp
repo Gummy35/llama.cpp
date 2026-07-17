@@ -1,5 +1,6 @@
 #include "arg.h"
 #include "common.h"
+#include "debug.h"
 #include "log.h"
 
 #include "cli-context.h"
@@ -40,6 +41,9 @@ int llama_cli(int argc, char ** argv) {
     if (!common_params_parse(argc, argv, params, LLAMA_EXAMPLE_CLI)) {
         return 1;
     }
+
+    // Set up MoE callback if enabled
+    common_set_moe_callback(params);
 
 #if defined (__unix__) || (defined (__APPLE__) && defined (__MACH__))
     struct sigaction sigint_action;

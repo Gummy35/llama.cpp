@@ -1266,6 +1266,13 @@ common_params_context common_params_parser_init(common_params & params, llama_ex
         }
     ));
     add_opt(common_arg(
+        {"--log-moe"},
+        "log MoE expert selection during inference",
+        [](common_params & params) {
+            params.log_moe = true;
+        }
+    ).set_examples({LLAMA_EXAMPLE_COMMON}));
+    add_opt(common_arg(
         {"-cl", "--cache-list"},
         "show list of models in cache",
         [](common_params &) {

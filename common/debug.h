@@ -17,6 +17,9 @@ struct common_params;
 // The callback data will be passed as the third parameter (user_data)
 bool common_debug_cb_eval(struct ggml_tensor * t, bool ask, void * user_data);
 
+// Sets up MoE logging callback if log_moe flag is enabled
+void common_set_moe_callback(common_params & params);
+
 struct common_debug_cb_user_data {
     struct impl;
     std::unique_ptr<impl> pimpl;

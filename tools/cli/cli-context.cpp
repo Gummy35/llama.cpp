@@ -3,6 +3,7 @@
 
 #include "arg.h"
 #include "base64.hpp"
+#include "debug.h"
 #include "log.h"
 #include "console.h"
 
